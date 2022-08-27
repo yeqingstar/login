@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+
+<body>
+    <!-- 最大 -->
+    <div class="box">
+        <div class="smallbox">
+            <div class="top">
+                <h1>欢迎登录管理系统!</h1>
+            </div>
+            <div class="photo">
+            </div>
+            <div class="inp">
+                <input type="text" id="id" onblur="zhanghao()" placeholder="QQ号或者手机号">
+                <input type="text" id="pass" onblur="passward()" placeholder="密码">
+            </div>
+            <div class="btn" onclick="button()" id="btn">
+                <h1>登录</h1>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
+<script>
+    var id = document.getElementById('id')
+    console.log(id);
+    var pass = document.getElementById('pass')
+
+    function zhanghao() {
+        var rea = 3045576470;
+        var zh = 12345678911;
+        if (id.value == rea || id.value == zh) {
+            return true
+        } else {
+            return false
+        }
+    }
+
+    function passward() {
+        var admin = 123456;
+        if (pass.value == admin) {
+            return true
+        } else {
+            return false
+        }
+
+    }
+    var btn = document.getElementById('btn')
+
+    function button() {
+        if (zhanghao() && passward()) {
+            location.href = "./遇期猫.html"
+            return true
+        } else {
+            alert("账号或者密码错误")
+            id.value=pass.value=""
+            return false
+        }
+
+    }
+</script>
